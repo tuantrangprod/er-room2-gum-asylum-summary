@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101b28">
-  <title>Giao Ước Máu: Asylum · v1.1</title>
+  <title>Giao Ước Máu: Asylum · v1.2</title>
   <style>
     :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #101b28; color: #eef5f2; }
     * { box-sizing: border-box; }
@@ -16,12 +16,13 @@
     .version { color: #b7c8c8; margin: 0 0 12px; font-size: .85rem; }
     .legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0 0 24px; color: #b7c8c8; font-size: .76rem; }
     .legend span { display: inline-flex; align-items: center; gap: 7px; }
-    .tabs { display: flex; gap: 8px; margin: 0 0 24px; border-bottom: 1px solid #354955; }
+    .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; border-bottom: 1px solid #354955; }
     .tabs a { padding: 10px 14px; color: #b7c8c8; text-decoration: none; border-bottom: 2px solid transparent; }
     .tabs a[aria-current="page"] { color: #a4f1d4; border-color: #a4f1d4; }
     .tabs a:focus-visible { outline: 2px solid #9df6d8; }
     .dot { width: 10px; height: 10px; border-radius: 50%; background: #9eabb1; }
     .dot.locked { background: #5cdaad; }
+    .dot.draft { background: #9eabb1; }
     section { margin: 0 0 26px; }
     section.feature { border: 2px solid #a4f1d4; border-radius: 16px; padding: 10px 15px; background: #1d4145; }
     h2 { margin: 0 0 8px; color: #b8d7d4; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
@@ -39,9 +40,42 @@
     .more p { margin: 0 0 7px; }
     .expand { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 5px; background: #ffffff12; color: #a4f1d4; }
     details[open] .expand { background: #ffffff2a; }
+    .review { border: 2px solid #ff7777; border-radius: 16px; padding: 16px; background: linear-gradient(135deg, #3a1f29, #172b37 58%); }
+    .review header { margin-bottom: 14px; }
+    .review header .eyebrow { color: #ff9b9b; }
+    .review header h2 { margin: 7px 0; color: #fff1f1; font: 600 1.4rem/1.2 Georgia, serif; }
+    .review header p { margin: 5px 0; color: #d8c7c9; font-size: .83rem; line-height: 1.5; }
+    .review-config { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-bottom: 16px; }
+    .review-config article { padding: 10px; border: 1px solid #594550; border-radius: 8px; background: #101b286b; }
+    .review-config small, .review-config span { display: block; color: #bbaeb2; font-size: .72rem; line-height: 1.4; }
+    .review-config strong { display: block; margin: 3px 0; color: #ffd591; }
+    .factor { margin-bottom: 9px; border: 1px solid #72515a; border-radius: 9px; background: #152732; overflow: hidden; }
+    .factor[data-impact="priority"] { border-color: #5cdaad; background: #17352f; }
+    .factor[data-impact="sacrifice"] { border-color: #ff7777; background: #351f28; }
+    .factor summary { display: grid; grid-template-columns: 24px 145px minmax(0, 1fr) auto; align-items: center; gap: 9px; padding: 11px; }
+    .factor input { width: 16px; height: 16px; accent-color: #5cdaad; }
+    .factor strong { color: #e6d1f8; font-size: .83rem; }
+    .factor summary > span:not(.badge) { color: #e1eeeb; font-size: .81rem; }
+    .badge { padding: 3px 7px; border-radius: 999px; color: #f0dba9; background: #ffd5911c; font-size: .66rem; font-weight: 800; text-transform: uppercase; }
+    [data-impact="priority"] .badge { color: #a4f1d4; background: #5cdaad24; }
+    [data-impact="sacrifice"] .badge { color: #ffb2b2; background: #ff777724; }
+    .factor-details { padding: 0 14px 12px 48px; color: #c4d6d3; font-size: .79rem; line-height: 1.5; }
+    .factor-details p { margin: 5px 0; }
+    .outcome { margin-top: 13px; padding: 12px; border: 1px solid #ff7777; border-radius: 9px; background: #220f18a8; }
+    .outcome.ready { border-color: #5cdaad; background: #102c29; }
+    .outcome h3 { margin: 0 0 6px; font-size: .88rem; }
+    .outcome h4 { margin: 11px 0 4px; color: #ffd591; font-size: .74rem; text-transform: uppercase; }
+    .outcome p, .outcome li { color: #d5e1df; font-size: .79rem; line-height: 1.5; }
+    .outcome ul { margin: 4px 0 0; padding-left: 20px; }
+    .references { margin-top: 14px; }
+    .references a { color: #89edcf; font-weight: 700; }
+    .references p { margin: 5px 0; color: #c4d6d3; font-size: .8rem; }
     footer { border-top: 1px solid #354955; padding-top: 18px; color: #b7c8c8; font-size: .8rem; }
     @media (max-width: 560px) {
       main { padding: 28px 18px 60px; }
+      .review-config { grid-template-columns: 1fr; }
+      .factor summary { grid-template-columns: 24px minmax(0, 1fr) auto; }
+      .factor summary > span:not(.badge) { grid-column: 2 / 4; }
       .row-head, .row-head:not(.expandable) { grid-template-columns: 12px 1fr 24px; gap: 2px 9px; }
       .keyword { grid-column: 2; }
       .brief { grid-column: 2; grid-row: 2; }
@@ -52,11 +86,12 @@
 </head>
 <body>
   <main id="summary"><noscript>Cần bật JavaScript để xem báo cáo Phòng 2.</noscript></main>
-  <script src="room-2-summary-data.js?v=1.1-general-checklist"></script>
+  <script src="room-2-summary-data.js?v=1.2-top-level-review"></script>
   <script>
-    // Display only. Versioned Locked content lives in adjacent data-only JS.
+    // Display only. Public Locked facts and explicitly important Draft review live in adjacent data-only JS.
     const data = window.room2Summary;
     const root = document.getElementById('summary');
+    let priority = null;
 
     function add(parent, tag, className, text) {
       const node = document.createElement(tag);
@@ -84,9 +119,69 @@
       }
     }
 
+    function renderReview() {
+      const review = data.importantReview;
+      const shell = add(root, 'section', 'review');
+      const header = add(shell, 'header');
+      add(header, 'div', 'eyebrow', review.eyebrow);
+      add(header, 'h2', '', review.title);
+      add(header, 'p', '', review.intro);
+      add(header, 'p', '', review.notice);
+      const config = add(shell, 'div', 'review-config');
+      review.config.forEach(item => {
+        const card = add(config, 'article');
+        add(card, 'small', '', item.keyword);
+        add(card, 'strong', '', item.value);
+        add(card, 'span', '', item.note);
+      });
+      review.factors.forEach(factor => {
+        const impact = factor.id === priority ? 'priority' : priority ? 'sacrifice' : 'unresolved';
+        const panel = add(shell, 'details', 'factor');
+        panel.dataset.impact = impact;
+        panel.open = factor.id === priority;
+        const summary = add(panel, 'summary');
+        const radio = add(summary, 'input');
+        radio.type = 'radio';
+        radio.name = 'public-review-priority';
+        radio.checked = factor.id === priority;
+        radio.setAttribute('aria-label', `Chọn ${factor.keyword} làm ưu tiên số 1`);
+        radio.addEventListener('click', event => event.stopPropagation());
+        radio.addEventListener('change', () => { priority = factor.id; render(); });
+        add(summary, 'strong', '', factor.keyword);
+        add(summary, 'span', '', factor.brief);
+        add(summary, 'span', 'badge', impact === 'priority' ? 'Priority #1' : impact === 'sacrifice' ? 'Trade-off' : 'Needs priority');
+        const details = add(panel, 'div', 'factor-details');
+        factor.details.forEach(text => add(details, 'p', '', text));
+      });
+      const outcome = add(shell, 'section', priority ? 'outcome ready' : 'outcome');
+      if (!priority) {
+        add(outcome, 'h3', '', 'Chọn một priority để xem trade-off');
+        add(outcome, 'p', '', 'Lựa chọn chỉ thay đổi màn hình; không phải phê duyệt và không được lưu.');
+      } else {
+        const factor = review.factors.find(item => item.id === priority);
+        const result = review.outcomes[priority];
+        add(outcome, 'h3', '', `Priority #1 · ${factor.keyword}`);
+        add(outcome, 'p', '', result.summary);
+        add(outcome, 'h4', '', 'Sacrifices / conflicts');
+        const sacrifices = add(outcome, 'ul');
+        result.sacrifices.forEach(text => add(sacrifices, 'li', '', text));
+        add(outcome, 'h4', '', 'Feasible responses');
+        const solutions = add(outcome, 'ul');
+        result.solutions.forEach(text => add(solutions, 'li', '', text));
+      }
+      const references = add(shell, 'div', 'references');
+      review.references.forEach(item => {
+        const link = add(references, 'a', '', `${item.keyword} ↗`);
+        link.href = item.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        add(references, 'p', '', item.brief);
+      });
+    }
+
     function render() {
       if (!data) return;
-      const general = location.hash === '#general';
+      const view = location.hash === '#general' ? 'general' : location.hash === '#review' ? 'review' : 'room';
       document.title = data.title;
       root.replaceChildren();
       add(root, 'div', 'eyebrow', data.eyebrow);
@@ -96,30 +191,35 @@
       add(title, 'em', '', data.heading[1]);
       add(root, 'p', 'version', `${data.version} · ${data.scope}`);
       const legend = add(root, 'div', 'legend');
-      const legendItem = add(legend, 'span');
-      add(legendItem, 'i', 'dot locked');
-      add(legendItem, 'span', '', data.statusLegend.locked);
-
+      for (const status of view === 'review' ? ['draft'] : ['locked']) {
+        const item = add(legend, 'span');
+        add(item, 'i', `dot ${status}`);
+        add(item, 'span', '', data.statusLegend[status]);
+      }
       const tabs = add(root, 'nav', 'tabs');
       tabs.setAttribute('aria-label', 'Báo cáo Phòng 2');
       for (const [label, href, active] of [
-        ['Room 2 · Locked', '#room-2', !general],
-        ['General checklist', '#general', general]
+        ['Room 2 · Locked', '#room-2', view === 'room'],
+        ['Top-level review · Important', '#review', view === 'review'],
+        ['General checklist', '#general', view === 'general']
       ]) {
         const link = add(tabs, 'a', '', label);
         link.href = href;
         if (active) link.setAttribute('aria-current', 'page');
       }
-
-      if (!general) {
-        const feature = add(root, 'section', 'feature');
-        row(feature, data.usp);
-      }
-      const sections = general ? data.generalSections : data.roomSections;
-      for (const section of sections) {
-        const group = add(root, 'section');
-        add(group, 'h2', '', section.title);
-        section.rows.forEach(item => row(group, item));
+      if (view === 'review') {
+        renderReview();
+      } else {
+        if (view === 'room') {
+          const feature = add(root, 'section', 'feature');
+          row(feature, data.usp);
+        }
+        const sections = view === 'general' ? data.generalSections : data.roomSections;
+        sections.forEach(section => {
+          const group = add(root, 'section');
+          add(group, 'h2', '', section.title);
+          section.rows.forEach(item => row(group, item));
+        });
       }
       add(root, 'footer', '', data.footer);
     }

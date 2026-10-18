@@ -1,14 +1,15 @@
-// Frozen v1.1 snapshot. Public export contains Locked content only.
+// Frozen v1.2 public snapshot. Locked facts plus explicitly important Draft review only.
 window.room2Summary = {
-  "version": "v1.1",
-  "title": "Giao Ước Máu: Asylum · Room 2 v1.1",
-  "eyebrow": "Phòng chơi 02 · Room locks + general checklist",
+  "version": "v1.2",
+  "title": "Giao Ước Máu: Asylum · Room 2 v1.2",
+  "eyebrow": "Phòng chơi 02 · Locked facts + important review",
   "heading": [
     "Giao Ước Máu:",
     "Asylum."
   ],
   "statusLegend": {
-    "locked": "Locked · đã duyệt / bắt buộc"
+    "locked": "Locked · đã duyệt / bắt buộc",
+    "draft": "Draft · chưa duyệt"
   },
   "usp": {
     "keyword": "Điểm nhấn",
@@ -67,26 +68,6 @@ window.room2Summary = {
       ]
     },
     {
-      "title": "Layout",
-      "rows": [
-        {
-          "keyword": "Sơ đồ",
-          "brief": "4 phòng; hành lang hình số 8.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Phòng A–B",
-          "brief": "Độc lập, 4 vách mỗi phòng.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Phòng C–D",
-          "brief": "3 vách, áp tường phòng GM.",
-          "status": "locked"
-        }
-      ]
-    },
-    {
       "title": "Hard rules · Game over",
       "rows": [
         {
@@ -122,6 +103,121 @@ window.room2Summary = {
       ]
     }
   ],
+  "importantReview": {
+    "title": "TOP-LEVEL REVIEW",
+    "eyebrow": "Important Draft · top-level layout trade-offs",
+    "status": "draft",
+    "intro": "Ba mục tiêu cạnh tranh; chưa có cấu hình đã kiểm chứng đáp ứng đồng thời cả ba.",
+    "notice": "Báo cáo quan trọng để người đọc hiểu đánh đổi; chưa phải quyết định layout đã duyệt.",
+    "config": [
+      {
+        "keyword": "Diện tích gộp",
+        "value": "60 m² baseline",
+        "note": "Không phải giới hạn cứng; thay đổi trong room-layout-design."
+      },
+      {
+        "keyword": "Số người tối đa",
+        "value": "8 người",
+        "note": "Thiết kế phải đáp ứng số tối đa được bán, không dựa vào trung bình."
+      },
+      {
+        "keyword": "Nhóm trung bình",
+        "value": "Chưa có dữ liệu",
+        "note": "Cần số liệu booking để quyết định tối ưu 6 hay 8 người."
+      },
+      {
+        "keyword": "Cấu trúc truyện",
+        "value": "3–4 hồi",
+        "note": "No room reuse áp dụng theo hồi, không theo từng challenge."
+      },
+      {
+        "keyword": "Diện tích phòng",
+        "value": "12–15 m²",
+        "note": "Mục tiêu tối thiểu cho khu giải đố lâu với tối đa 8 người; vẫn cần duyệt an toàn."
+      }
+    ],
+    "factors": [
+      {
+        "id": "action-flow",
+        "keyword": "1 · Action flow",
+        "brief": "Giữ hành lang hình số 8; ưu tiên chạy, rượt đuổi và hành động.",
+        "status": "draft",
+        "details": [
+          "Cần đủ bề rộng và tầm nhìn để di chuyển; thu hẹp hành lang không phải giải pháp ưu tiên.",
+          "Có thể cần diện tích trên 60 m², tái sử dụng phòng giữa các hồi hoặc giảm số người tối đa."
+        ]
+      },
+      {
+        "id": "no-room-reuse",
+        "keyword": "2 · No room reuse",
+        "brief": "Qua hồi mới là vào khu mới; không quay lại phòng của hồi trước.",
+        "status": "draft",
+        "details": [
+          "Với 3–4 hồi cần 3–4 khu riêng; 12–15 m² mỗi khu tương đương 36–60 m² diện tích phòng trước khi cộng hành lang, vách và lối nhân sự.",
+          "Có thể phải bỏ hình số 8, dùng một vòng ngắn hơn quanh một phòng độc lập hoặc tăng tổng diện tích."
+        ]
+      },
+      {
+        "id": "eight-player-capacity",
+        "keyword": "3 · Eight-player capacity",
+        "brief": "Phòng và hành lang vận hành đúng với tối đa 8 người.",
+        "status": "draft",
+        "details": [
+          "Tám người cần thêm diện tích đứng, giải đố và lưu thông; mức trung bình không thay thế kiểm tra sức chứa tối đa.",
+          "Nếu tối ưu cho 6 người, cần quyết định giảm giới hạn booking thay vì chỉ giả định nhóm tám người hiếm gặp."
+        ]
+      }
+    ],
+    "outcomes": {
+      "action-flow": {
+        "summary": "Giữ trải nghiệm chạy và hành lang hình số 8.",
+        "sacrifices": [
+          "No room reuse: tại baseline 60 m², nhiều khả năng phải tái sử dụng phòng giữa các hồi.",
+          "Eight-player capacity: chưa được chứng minh nếu vẫn giữ đủ bề rộng hành lang và diện tích phòng."
+        ],
+        "solutions": [
+          "Tăng tổng diện tích trên 60 m².",
+          "Tái sử dụng phòng với thay đổi ánh sáng, đạo cụ và mục tiêu theo hồi.",
+          "Giảm giới hạn booking xuống 6 người.",
+          "Chỉ dùng hành lang làm vùng chơi khi vẫn giữ lối lưu thông và thoát hiểm hợp lệ."
+        ]
+      },
+      "no-room-reuse": {
+        "summary": "Giữ quy tắc mỗi hồi dùng khu mới và không quay lại.",
+        "sacrifices": [
+          "Action flow: hình số 8 có thể phải đổi thành một vòng ngắn, ít không gian chạy hơn.",
+          "Eight-player capacity: baseline 60 m² không đủ bằng chứng cho 3–4 phòng lớn cộng hành lang và vách."
+        ],
+        "solutions": [
+          "Tăng tổng diện tích để chứa 3–4 khu riêng.",
+          "Dùng một hành lang vòng đơn giản quanh một phòng độc lập.",
+          "Giảm giới hạn booking xuống 6 người.",
+          "Chỉ giảm số hồi khi cốt truyện vẫn có điểm dừng booking hợp lý."
+        ]
+      },
+      "eight-player-capacity": {
+        "summary": "Giữ sức chứa tối đa 8 người và diện tích hoạt động phù hợp.",
+        "sacrifices": [
+          "Tại baseline 60 m², chưa thể giữ đồng thời cả hình số 8 và no room reuse.",
+          "Cần chọn tái sử dụng phòng hoặc đơn giản hóa hành lang nếu chưa tăng diện tích."
+        ],
+        "solutions": [
+          "Tăng tổng diện tích để thử giữ cả hai mục tiêu còn lại.",
+          "Giữ hình số 8 nhưng tái sử dụng phòng giữa các hồi.",
+          "Giữ no room reuse nhưng thay bằng hành lang đơn giản hơn.",
+          "Thu thập dữ liệu booking; nếu giới hạn thực tế là 6, tạo cấu hình sáu người riêng."
+        ]
+      }
+    },
+    "references": [
+      {
+        "keyword": "Room layout design",
+        "brief": "Xem báo cáo layout công khai và các phương án đo đạc liên quan.",
+        "status": "draft",
+        "href": "https://tuantrangprod.github.io/er-room-2-layout/"
+      }
+    ]
+  },
   "generalSections": [
     {
       "title": "STANDARD ROOM",
@@ -354,6 +450,6 @@ window.room2Summary = {
     }
   ],
   "generalSourceHash": "a9bb6559d83da42b1cedaac3484ca9127869db6760431f3e85fd3aea4f5c1796",
-  "footer": "v1.1 · Chỉ gồm nội dung Room 2 Locked và General checklist Locked.",
-  "scope": "14 mục Room 2 Locked + 29 mục General checklist · Báo cáo chỉ xem"
+  "footer": "v1.2 · Public readers-only export · Room 2 Locked + Important Draft review + General checklist Locked.",
+  "scope": "11 mục Room 2 Locked + 3 conflict factors quan trọng + 29 mục General checklist"
 };
