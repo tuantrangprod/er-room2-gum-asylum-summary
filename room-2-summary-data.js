@@ -1,46 +1,67 @@
-// Frozen v0.1 snapshot. Approved keywords and short descriptions only; no drafts or editor data.
+// Frozen v1.0 snapshot. Locked keywords and short descriptions only.
 window.room2Summary = {
-  version: 'v0.1',
+  version: 'v1.0',
+  title: 'Giao Ước Máu: Asylum · Room 2 v1.0',
   eyebrow: 'Phòng chơi 02 · Tổng quan đã duyệt',
-  heading: ['Bệnh viện tâm thần', 'bỏ hoang.'],
-  usp: { keyword: 'Điểm nhấn', brief: 'Lén lút bám theo NPC.' },
+  heading: ['Giao Ước Máu:', 'Asylum.'],
+  statusLegend: {
+    locked: 'Locked · đã duyệt'
+  },
+  usp: {
+    keyword: 'Điểm nhấn',
+    brief: 'Lén lút bám theo NPC.',
+    status: 'locked'
+  },
   sections: [
+    {
+      title: 'Nhận diện',
+      rows: [
+        { keyword: 'Tên chính thức', brief: 'Giao Ước Máu: Asylum.', status: 'locked' }
+      ]
+    },
     {
       title: 'Theme, location',
       rows: [
-        { keyword: 'Bối cảnh', brief: 'Bệnh viện tâm thần bỏ hoang' },
-        { keyword: 'Thời điểm', brief: 'Việt Nam, 1990 - 2010. Chưa xác định cụ thể hơn' },
-        { keyword: 'Gojinam', brief: 'Lấy cảm hứng từ bối cảnh trong phim `Gojinam` , Hàn Quốc' }
+        { keyword: 'Bối cảnh', brief: 'Bệnh viện tâm thần bỏ hoang.', status: 'locked' },
+        { keyword: 'Thời điểm', brief: 'Việt Nam, 1990–2010; chưa xác định cụ thể hơn.', status: 'locked' },
+        { keyword: 'Gonjiam', brief: 'Lấy cảm hứng từ bối cảnh bệnh viện bỏ hoang trong phim Hàn Quốc.', status: 'locked' }
       ]
     },
     {
-      title: 'CHALLENGES',
+      title: 'Nhân vật',
       rows: [
-        { keyword: 'Dấu vết', brief: 'Theo NPC mà không bị phát hiện.' }
+        { keyword: 'Y tá', brief: 'Hồn ma chính; tạo hình tham chiếu game Silent Hill.', status: 'locked' }
       ]
     },
     {
-      title: 'LAYOUT',
+      title: 'Challenges',
       rows: [
-        { keyword: 'Sơ đồ', brief: '4 phòng; hành lang hình số 8.' },
-        { keyword: 'Phòng A–B', brief: 'Độc lập, 4 vách mỗi phòng.' },
-        { keyword: 'Phòng C–D', brief: '3 vách, áp tường phòng GM.' }
+        { keyword: 'Dấu vết', brief: 'Theo NPC mà không bị phát hiện.', status: 'locked' }
       ]
     },
     {
-      title: 'Hard rules - Game over',
+      title: 'Layout',
       rows: [
-        { keyword: 'Trước khi vào', brief: 'Giải thích rõ luật bắt buộc cho người chơi.' },
-        { keyword: 'Cảnh báo', brief: 'Đèn đỏ + còi khi bị phát hiện.' },
-        { keyword: 'Kết thúc', brief: 'Chỉ khi cố ý vi phạm luật.' }
+        { keyword: 'Sơ đồ', brief: '4 phòng; hành lang hình số 8.', status: 'locked' },
+        { keyword: 'Phòng A–B', brief: 'Độc lập, 4 vách mỗi phòng.', status: 'locked' },
+        { keyword: 'Phòng C–D', brief: '3 vách, áp tường phòng GM.', status: 'locked' }
       ]
     },
     {
-      title: 'NOTES',
+      title: 'Hard rules · Game over',
       rows: [
-        { keyword: 'Bệnh nhân trên giường bệnh', brief: 'Live cutscene nên có' },
-        { keyword: 'Giường cũi', brief: 'Giường có song sắt để nhốt bệnh nhân tâm thần. ' }
+        { keyword: 'Trước khi vào', brief: 'Giải thích rõ luật bắt buộc cho người chơi.', status: 'locked' },
+        { keyword: 'Cảnh báo', brief: 'Đèn đỏ + còi khi bị phát hiện.', status: 'locked' },
+        { keyword: 'Kết thúc', brief: 'Chỉ khi người chơi cố ý vi phạm sau cảnh báo.', status: 'locked' }
+      ]
+    },
+    {
+      title: 'Notes',
+      rows: [
+        { keyword: 'Bệnh nhân trên giường', brief: 'Live cutscene nên có.', status: 'locked' },
+        { keyword: 'Giường cũi', brief: 'Giường có song sắt để nhốt bệnh nhân tâm thần.', status: 'locked' }
       ]
     }
-  ]
+  ],
+  footer: 'v1.0 · Chỉ gồm nội dung Locked đã được duyệt.'
 };
