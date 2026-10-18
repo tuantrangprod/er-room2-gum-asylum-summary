@@ -48,7 +48,7 @@
 </head>
 <body>
   <main id="summary"><noscript>Cần bật JavaScript để xem báo cáo Phòng 2.</noscript></main>
-  <script src="room-2-summary-data.js"></script>
+  <script src="room-2-summary-data.js?v=1.0-general-checklist-2"></script>
   <script>
     // Display only. Versioned content lives in adjacent data-only JS.
     const data = window.room2Summary;
@@ -85,7 +85,7 @@
       add(title, 'span', '', data.heading[0]);
       add(title, 'br');
       add(title, 'em', '', data.heading[1]);
-      add(root, 'p', 'version', `${data.version} · Báo cáo tóm tắt chỉ xem`);
+      add(root, 'p', 'version', `${data.version} · ${data.scope || 'Báo cáo tóm tắt chỉ xem'}`);
       const legend = add(root, 'div', 'legend');
       for (const status of ['locked']) {
         const item = add(legend, 'span');
