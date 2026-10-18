@@ -1,21 +1,21 @@
-// Frozen v1.0 snapshot. Locked keywords and short descriptions only.
+// Frozen v1.1 snapshot. Public export contains Locked content only.
 window.room2Summary = {
-  "version": "v1.0",
-  "title": "Giao Ước Máu: Asylum · Room 2 v1.0",
+  "version": "v1.1",
+  "title": "Giao Ước Máu: Asylum · Room 2 v1.1",
   "eyebrow": "Phòng chơi 02 · Room locks + general checklist",
   "heading": [
     "Giao Ước Máu:",
     "Asylum."
   ],
   "statusLegend": {
-    "locked": "Locked · đã duyệt"
+    "locked": "Locked · đã duyệt / bắt buộc"
   },
   "usp": {
     "keyword": "Điểm nhấn",
     "brief": "Lén lút bám theo NPC.",
     "status": "locked"
   },
-  "sections": [
+  "roomSections": [
     {
       "title": "Nhận diện",
       "rows": [
@@ -27,156 +27,21 @@ window.room2Summary = {
       ]
     },
     {
-      "title": "General checklist · Room target",
-      "rows": [
-        {
-          "keyword": "Người chơi",
-          "brief": "Một nhóm 4–8 người; casual hoàn thành trong 3 giờ, hardcore có thể hoàn thành trong 2 giờ.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Diện tích",
-          "brief": "Toàn phòng 50–70 m².",
-          "status": "locked"
-        },
-        {
-          "keyword": "Đặt chỗ",
-          "brief": "Hỗ trợ vé 1, 2 hoặc 3 giờ; mỗi giờ kết thúc bằng event hoặc live cutscene.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Thử thách",
-          "brief": "Mục tiêu 10–12 thử thách, gồm cả thử thách tùy chọn.",
-          "status": "locked"
-        },
-        {
-          "keyword": "NPC",
-          "brief": "Thông thường 2–3 vai: một người sống, một hồn ma và một vai tùy chọn.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Live cutscene",
-          "brief": "Một cảnh diễn ngắn, đáng nhớ và đẩy câu chuyện tiến lên.",
-          "status": "locked"
-        }
-      ]
-    },
-    {
-      "title": "General checklist · Flow",
-      "rows": [
-        {
-          "keyword": "Cấu trúc",
-          "brief": "Ưu tiên 3–4 hồi truyện tuần tự.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Cuối mỗi giờ",
-          "brief": "Có event/cutscene; dùng cliffhanger khi trải nghiệm còn tiếp tục.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Luồng chính",
-          "brief": "Khóa tiến trình giữa các hồi; cho phép giải câu đố thành phần linh hoạt.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Tách nhóm",
-          "brief": "Ít nhất một thử thách buộc các nhóm nhỏ phối hợp có ý nghĩa.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Luật bắt buộc",
-          "brief": "Giải thích trước khi vào; dùng đèn đỏ và báo động khi cần; không kết thúc game vì lỗi thông thường.",
-          "status": "locked"
-        }
-      ]
-    },
-    {
-      "title": "General checklist · Puzzle & hint",
-      "rows": [
-        {
-          "keyword": "Mốc 5 phút",
-          "brief": "Thiết kế để người chơi hiểu và tự giải một câu đố thường trong khoảng 5 phút.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Mốc 10 phút",
-          "brief": "Bắt đầu hint qua ánh sáng, SFX, automation hoặc GM.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Mốc 15 phút",
-          "brief": "Cung cấp đủ hướng dẫn để giải và tiếp tục; không thử thách nào kéo dài hơn.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Cách hint",
-          "brief": "Gợi ý input hoặc hành động tiếp theo, không đưa thẳng đáp án.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Clue trong khu",
-          "brief": "Ưu tiên manh mối và vật dụng có trong khu vực mới bước vào.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Độ khó",
-          "brief": "Tăng dần độ khó cùng mạch căng thẳng, nghỉ, cliffhanger và spectacle.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Finale",
-          "brief": "Ưu tiên cơ chế do người chơi tác động, quyết định có ý nghĩa, nhiều pha khi phù hợp và chiến thắng đáng nhớ.",
-          "status": "locked"
-        }
-      ]
-    },
-    {
-      "title": "General checklist · Space & production",
-      "rows": [
-        {
-          "keyword": "Sức chứa",
-          "brief": "Khu giải đố lâu đặt mục tiêu 1,5 m²/người; 12 m² cho 8 người, chờ duyệt an toàn.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Layout",
-          "brief": "Thiết kế luồng khách, cửa, tầm nhìn, lối NPC/nhân sự và phương án khi khách lệch flow.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Bộ thiết kế",
-          "brief": "Cần layout sketch, concept/demo, kế hoạch đèn, automation và manual fallback.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Automation",
-          "brief": "Tự động hóa cue lặp lại khi phù hợp; luôn giữ GM override và phương án khi lỗi.",
-          "status": "locked"
-        },
-        {
-          "keyword": "Bối cảnh chung",
-          "brief": "Tập trung Việt Nam, thời điểm khoảng 1990–2010 nếu brief phòng không quy định khác.",
-          "status": "locked"
-        }
-      ]
-    },
-    {
       "title": "Theme, location",
       "rows": [
         {
           "keyword": "Bối cảnh",
-          "brief": "Bệnh viện tâm thần bỏ hoang.",
+          "brief": "Bệnh viện tâm thần bỏ hoang",
           "status": "locked"
         },
         {
           "keyword": "Thời điểm",
-          "brief": "Việt Nam, 1990–2010; chưa xác định cụ thể hơn.",
+          "brief": "Việt Nam, 1990 - 2010. Chưa xác định cụ thể hơn",
           "status": "locked"
         },
         {
-          "keyword": "Gonjiam",
-          "brief": "Lấy cảm hứng từ bối cảnh bệnh viện bỏ hoang trong phim Hàn Quốc.",
+          "keyword": "Gojinam",
+          "brief": "Lấy cảm hứng từ bối cảnh trong phim `Gojinam` , Hàn Quốc",
           "status": "locked"
         }
       ]
@@ -236,7 +101,7 @@ window.room2Summary = {
         },
         {
           "keyword": "Kết thúc",
-          "brief": "Chỉ khi người chơi cố ý vi phạm sau cảnh báo.",
+          "brief": "Chỉ khi cố ý vi phạm luật.",
           "status": "locked"
         }
       ]
@@ -245,8 +110,8 @@ window.room2Summary = {
       "title": "Notes",
       "rows": [
         {
-          "keyword": "Bệnh nhân trên giường",
-          "brief": "Live cutscene nên có.",
+          "keyword": "Bệnh nhân trên giường bệnh",
+          "brief": "Live cutscene nên có",
           "status": "locked"
         },
         {
@@ -257,6 +122,238 @@ window.room2Summary = {
       ]
     }
   ],
-  "footer": "v1.0 · Chỉ gồm nội dung Room 2 Locked và general checklist đã được duyệt.",
-  "scope": "Room 2 Locked + 23 mục General checklist · Báo cáo chỉ xem"
+  "generalSections": [
+    {
+      "title": "STANDARD ROOM",
+      "rows": [
+        {
+          "keyword": "Play",
+          "brief": "One group of 4–8 players; casual groups complete in 3 hours, while hardcore groups may complete in 2 hours; 50–70 m².",
+          "status": "locked"
+        },
+        {
+          "keyword": "Bookings",
+          "brief": "Sell 1-, 2-, or 3-hour sessions; each hour is a playable block with a clear ending event or live cutscene.",
+          "status": "locked",
+          "details": [
+            "Use a cliffhanger when more content remains."
+          ]
+        },
+        {
+          "keyword": "Challenges",
+          "brief": "Target 10–12 total, including optional challenges; a normal challenge resolves within 15 minutes.",
+          "status": "locked"
+        },
+        {
+          "keyword": "NPCs",
+          "brief": "Normally 2–3: one human, one ghost and optionally one more.",
+          "status": "locked"
+        },
+        {
+          "keyword": "Live cutscene",
+          "brief": "NPCs perform a short, memorable scene that moves the story forward.",
+          "status": "locked"
+        }
+      ]
+    },
+    {
+      "title": "SPECIALIZED GUIDANCE",
+      "rows": [
+        {
+          "keyword": "Story design",
+          "brief": "Use /story-design and follow the served Story Design workflow.",
+          "status": "locked",
+          "details": [
+            "Instructions: ../../.pi/prompts/story-design.md",
+            "Workflow: ../../game-design/story-design.html#workflow",
+            "Research records: ../../game-design/story-library-data.js"
+          ]
+        },
+        {
+          "keyword": "Game design",
+          "brief": "Use /game-design for staged development from selected story through production.",
+          "status": "locked",
+          "details": [
+            "Instructions: ../../.pi/prompts/game-design.md"
+          ]
+        },
+        {
+          "keyword": "Scope",
+          "brief": "Keep specialized process and criteria in their dedicated sources, not in the general checklist.",
+          "status": "locked"
+        }
+      ]
+    },
+    {
+      "title": "SHARED DECISIONS",
+      "rows": [
+        {
+          "keyword": "Room locks",
+          "brief": "Preserve room-specific locks; ask when requirements conflict.",
+          "status": "locked"
+        },
+        {
+          "keyword": "Drafts",
+          "brief": "Mark unconfirmed ideas as drafts; resolve blocking questions and obtain approval before building on decisions.",
+          "status": "locked"
+        }
+      ]
+    },
+    {
+      "title": "PLAY RULES",
+      "rows": [
+        {
+          "keyword": "Main flow",
+          "brief": "Prefer 3–4 sequential story acts across available booking blocks.",
+          "status": "locked",
+          "details": [
+            "Lock progression between acts; let players solve sub-challenges within an act in flexible order."
+          ]
+        },
+        {
+          "keyword": "Hour endings",
+          "brief": "End every booked hour with a memorable event or live cutscene.",
+          "status": "locked",
+          "details": [
+            "If play continues, also create a cliffhanger; if it ends, provide a coherent stopping point."
+          ]
+        },
+        {
+          "keyword": "Group separation",
+          "brief": "Every game room must include at least one split-group challenge with meaningful cooperation.",
+          "status": "locked"
+        },
+        {
+          "keyword": "Player rules",
+          "brief": "Explain mandatory rules before entry; use clear warnings and do not end a game for routine mistakes.",
+          "status": "locked",
+          "details": [
+            "Use red-light and alarm warnings when needed to guide roleplay or discourage deliberate violations."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CHALLENGE PACING & HINTS",
+      "rows": [
+        {
+          "keyword": "Normal challenge",
+          "brief": "Design for players to understand and solve it in about 5 minutes.",
+          "status": "locked",
+          "details": [
+            "Monitor progress before intervening."
+          ]
+        },
+        {
+          "keyword": "Progressive hints",
+          "brief": "At 10 minutes, start hints through automation or the GM.",
+          "status": "locked",
+          "details": [
+            "Hints explain the required input or next action without directly giving the answer."
+          ]
+        },
+        {
+          "keyword": "Maximum time",
+          "brief": "By 15 minutes, provide enough guidance for players to solve and continue.",
+          "status": "locked",
+          "details": [
+            "Act puzzles, final challenges and action sequences may use different pacing but must not exceed 15 minutes."
+          ]
+        },
+        {
+          "keyword": "Local readability",
+          "brief": "A new area should primarily use clues, hints and objects available in that area.",
+          "status": "locked",
+          "details": [
+            "Avoid unclear dependencies on objects players reasonably left behind."
+          ]
+        },
+        {
+          "keyword": "Difficulty",
+          "brief": "Increase difficulty progressively while planning tension, relief, cliffhangers and spectacle.",
+          "status": "locked"
+        },
+        {
+          "keyword": "Finale",
+          "brief": "Prefer player-driven mechanics, meaningful decisions, multiple phases and a memorable victory event.",
+          "status": "locked"
+        }
+      ]
+    },
+    {
+      "title": "SPACE & PRODUCTION CHECKLIST",
+      "rows": [
+        {
+          "keyword": "Capacity",
+          "brief": "Long-stay puzzle areas target at least 1.5 m² per player—12 m² for 8 players.",
+          "status": "locked",
+          "details": [
+            "Subject to final safety and evacuation review."
+          ]
+        },
+        {
+          "keyword": "Layout",
+          "brief": "Plan player flow, doors, sightlines, staff/NPC entrances, hidden routes and safe recovery.",
+          "status": "locked",
+          "details": [
+            "Fake doors and fake rooms are optional tools, not requirements."
+          ]
+        },
+        {
+          "keyword": "Design package",
+          "brief": "Prepare a layout sketch, concept/demo, lighting plan, automation plan and manual fallback.",
+          "status": "locked",
+          "details": [
+            "Complete before production approval."
+          ]
+        },
+        {
+          "keyword": "Automation",
+          "brief": "Automate repeatable cues where practical while retaining GM override and failure recovery.",
+          "status": "locked"
+        }
+      ]
+    },
+    {
+      "title": "TERMS",
+      "rows": [
+        {
+          "keyword": "Game room",
+          "brief": "The whole escape game room.",
+          "status": "locked"
+        },
+        {
+          "keyword": "Sub room",
+          "brief": "A mini/small room inside a game room.",
+          "status": "locked"
+        },
+        {
+          "keyword": "Room",
+          "brief": "May mean game room or sub room; confirm when unclear.",
+          "status": "locked"
+        }
+      ]
+    },
+    {
+      "title": "SETTING",
+      "rows": [
+        {
+          "keyword": "Place",
+          "brief": "Focus on Vietnam.",
+          "status": "locked"
+        },
+        {
+          "keyword": "Era",
+          "brief": "Set rooms around 1990–2010 unless the confirmed room brief says otherwise.",
+          "status": "locked",
+          "details": [
+            "Ask before changing the timeline."
+          ]
+        }
+      ]
+    }
+  ],
+  "generalSourceHash": "a9bb6559d83da42b1cedaac3484ca9127869db6760431f3e85fd3aea4f5c1796",
+  "footer": "v1.1 · Chỉ gồm nội dung Room 2 Locked và General checklist Locked.",
+  "scope": "14 mục Room 2 Locked + 29 mục General checklist · Báo cáo chỉ xem"
 };

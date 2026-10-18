@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101b28">
-  <title>Giao Ước Máu: Asylum · v1.0</title>
+  <title>Giao Ước Máu: Asylum · v1.1</title>
   <style>
     :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #101b28; color: #eef5f2; }
     * { box-sizing: border-box; }
@@ -14,8 +14,12 @@
     h1 { font: 500 clamp(2.5rem, 8vw, 4.4rem)/1 Georgia, serif; letter-spacing: -.05em; margin: 18px 0 12px; }
     h1 em { font-style: normal; color: #a5f1d3; }
     .version { color: #b7c8c8; margin: 0 0 12px; font-size: .85rem; }
-    .legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0 0 30px; color: #b7c8c8; font-size: .76rem; }
+    .legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0 0 24px; color: #b7c8c8; font-size: .76rem; }
     .legend span { display: inline-flex; align-items: center; gap: 7px; }
+    .tabs { display: flex; gap: 8px; margin: 0 0 24px; border-bottom: 1px solid #354955; }
+    .tabs a { padding: 10px 14px; color: #b7c8c8; text-decoration: none; border-bottom: 2px solid transparent; }
+    .tabs a[aria-current="page"] { color: #a4f1d4; border-color: #a4f1d4; }
+    .tabs a:focus-visible { outline: 2px solid #9df6d8; }
     .dot { width: 10px; height: 10px; border-radius: 50%; background: #9eabb1; }
     .dot.locked { background: #5cdaad; }
     section { margin: 0 0 26px; }
@@ -48,11 +52,12 @@
 </head>
 <body>
   <main id="summary"><noscript>Cần bật JavaScript để xem báo cáo Phòng 2.</noscript></main>
-  <script src="room-2-summary-data.js?v=1.0-general-checklist-2"></script>
+  <script src="room-2-summary-data.js?v=1.1-general-checklist"></script>
   <script>
-    // Display only. Versioned content lives in adjacent data-only JS.
+    // Display only. Versioned Locked content lives in adjacent data-only JS.
     const data = window.room2Summary;
     const root = document.getElementById('summary');
+
     function add(parent, tag, className, text) {
       const node = document.createElement(tag);
       if (className) node.className = className;
@@ -60,6 +65,7 @@
       parent.append(node);
       return node;
     }
+
     function row(parent, item) {
       const wrapper = add(parent, 'div', 'row');
       const expandable = Boolean(item.details?.length);
@@ -77,7 +83,10 @@
         item.details.forEach(detail => add(more, 'p', '', detail));
       }
     }
-    if (data) {
+
+    function render() {
+      if (!data) return;
+      const general = location.hash === '#general';
       document.title = data.title;
       root.replaceChildren();
       add(root, 'div', 'eyebrow', data.eyebrow);
@@ -85,22 +94,38 @@
       add(title, 'span', '', data.heading[0]);
       add(title, 'br');
       add(title, 'em', '', data.heading[1]);
-      add(root, 'p', 'version', `${data.version} · ${data.scope || 'Báo cáo tóm tắt chỉ xem'}`);
+      add(root, 'p', 'version', `${data.version} · ${data.scope}`);
       const legend = add(root, 'div', 'legend');
-      for (const status of ['locked']) {
-        const item = add(legend, 'span');
-        add(item, 'i', `dot ${status}`);
-        add(item, 'span', '', data.statusLegend[status]);
+      const legendItem = add(legend, 'span');
+      add(legendItem, 'i', 'dot locked');
+      add(legendItem, 'span', '', data.statusLegend.locked);
+
+      const tabs = add(root, 'nav', 'tabs');
+      tabs.setAttribute('aria-label', 'Báo cáo Phòng 2');
+      for (const [label, href, active] of [
+        ['Room 2 · Locked', '#room-2', !general],
+        ['General checklist', '#general', general]
+      ]) {
+        const link = add(tabs, 'a', '', label);
+        link.href = href;
+        if (active) link.setAttribute('aria-current', 'page');
       }
-      const feature = add(root, 'section', 'feature');
-      row(feature, data.usp);
-      for (const section of data.sections) {
+
+      if (!general) {
+        const feature = add(root, 'section', 'feature');
+        row(feature, data.usp);
+      }
+      const sections = general ? data.generalSections : data.roomSections;
+      for (const section of sections) {
         const group = add(root, 'section');
         add(group, 'h2', '', section.title);
         section.rows.forEach(item => row(group, item));
       }
       add(root, 'footer', '', data.footer);
     }
+
+    window.addEventListener('hashchange', render);
+    render();
   </script>
 </body>
 </html>
