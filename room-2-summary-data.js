@@ -1,7 +1,7 @@
-// Frozen v1.2 public snapshot. Locked facts plus explicitly important Draft review only.
+// Frozen v1.3 public snapshot. Locked facts plus explicitly important Draft review only.
 window.room2Summary = {
-  "version": "v1.2",
-  "title": "Giao Ước Máu: Asylum · Room 2 v1.2",
+  "version": "v1.3",
+  "title": "Giao Ước Máu: Asylum · Room 2 v1.3",
   "eyebrow": "Phòng chơi 02 · Locked facts + important review",
   "heading": [
     "Giao Ước Máu:",
@@ -166,6 +166,16 @@ window.room2Summary = {
           "Tám người cần thêm diện tích đứng, giải đố và lưu thông; mức trung bình không thay thế kiểm tra sức chứa tối đa.",
           "Nếu tối ưu cho 6 người, cần quyết định giảm giới hạn booking thay vì chỉ giả định nhóm tám người hiếm gặp."
         ]
+      },
+      {
+        "id": "sixty-square-metre-envelope",
+        "keyword": "4 · Total gross room size",
+        "brief": "Giữ tổng diện tích gộp ở baseline 60 m².",
+        "status": "draft",
+        "details": [
+          "60 m² không phải giới hạn cứng; chỉ trở thành ràng buộc khi được chọn làm Priority #1.",
+          "Nếu giữ 60 m², phải chấp nhận hành lang nhỏ/ngắn hơn, tái sử dụng phòng hoặc phòng nhỏ với một phần hoạt động ngoài hành lang."
+        ]
       }
     ],
     "outcomes": {
@@ -173,7 +183,8 @@ window.room2Summary = {
         "summary": "Giữ trải nghiệm chạy và hành lang hình số 8.",
         "sacrifices": [
           "No room reuse: tại baseline 60 m², nhiều khả năng phải tái sử dụng phòng giữa các hồi.",
-          "Eight-player capacity: chưa được chứng minh nếu vẫn giữ đủ bề rộng hành lang và diện tích phòng."
+          "Eight-player capacity: chưa được chứng minh nếu vẫn giữ đủ bề rộng hành lang và diện tích phòng.",
+          "Total gross room size: trải nghiệm action đầy đủ có thể cần tổng diện tích lớn hơn 60 m²."
         ],
         "solutions": [
           "Tăng tổng diện tích trên 60 m².",
@@ -186,7 +197,8 @@ window.room2Summary = {
         "summary": "Giữ quy tắc mỗi hồi dùng khu mới và không quay lại.",
         "sacrifices": [
           "Action flow: hình số 8 có thể phải đổi thành một vòng ngắn, ít không gian chạy hơn.",
-          "Eight-player capacity: baseline 60 m² không đủ bằng chứng cho 3–4 phòng lớn cộng hành lang và vách."
+          "Eight-player capacity: baseline 60 m² không đủ bằng chứng cho 3–4 phòng lớn cộng hành lang và vách.",
+          "Total gross room size: 3–4 khu riêng 12–15 m² cộng circulation có thể buộc tổng diện tích vượt 60 m²."
         ],
         "solutions": [
           "Tăng tổng diện tích để chứa 3–4 khu riêng.",
@@ -198,14 +210,30 @@ window.room2Summary = {
       "eight-player-capacity": {
         "summary": "Giữ sức chứa tối đa 8 người và diện tích hoạt động phù hợp.",
         "sacrifices": [
-          "Tại baseline 60 m², chưa thể giữ đồng thời cả hình số 8 và no room reuse.",
-          "Cần chọn tái sử dụng phòng hoặc đơn giản hóa hành lang nếu chưa tăng diện tích."
+          "Action flow: hành lang hình số 8 cần thêm diện tích lưu thông cho tám người.",
+          "No room reuse: 3–4 khu riêng đủ lớn cho tám người cần thêm diện tích.",
+          "Total gross room size: giữ đủ sức chứa có thể buộc tổng diện tích vượt baseline 60 m²."
         ],
         "solutions": [
           "Tăng tổng diện tích để thử giữ cả hai mục tiêu còn lại.",
           "Giữ hình số 8 nhưng tái sử dụng phòng giữa các hồi.",
           "Giữ no room reuse nhưng thay bằng hành lang đơn giản hơn.",
           "Thu thập dữ liệu booking; nếu giới hạn thực tế là 6, tạo cấu hình sáu người riêng."
+        ]
+      },
+      "sixty-square-metre-envelope": {
+        "summary": "Giữ tổng diện tích gộp ở 60 m² và tối ưu mọi thành phần bên trong envelope này.",
+        "sacrifices": [
+          "Action flow: hành lang có thể nhỏ hơn hoặc ngắn hơn; trải nghiệm chạy và rượt đuổi giảm.",
+          "No room reuse: phải tái sử dụng phòng giữa các hồi để tăng hiệu suất diện tích.",
+          "Eight-player capacity: phòng nhỏ có thể buộc một phần người chơi đứng hoặc hoạt động ngoài hành lang."
+        ],
+        "solutions": [
+          "Giảm bề rộng hành lang chỉ sau khi kiểm tra circulation, vận hành và thoát hiểm.",
+          "Dùng hành lang hình chữ O ngắn hơn quanh một phòng độc lập.",
+          "Tái sử dụng phòng với cue, đạo cụ và mục tiêu mới theo từng hồi.",
+          "Thiết kế hallway play zone nhưng không được cản lối lưu thông hoặc thoát hiểm.",
+          "Nếu không chấp nhận các trade-off trên, tăng tổng diện tích trên 60 m²."
         ]
       }
     },
@@ -450,6 +478,6 @@ window.room2Summary = {
     }
   ],
   "generalSourceHash": "a9bb6559d83da42b1cedaac3484ca9127869db6760431f3e85fd3aea4f5c1796",
-  "footer": "v1.2 · Public readers-only export · Room 2 Locked + Important Draft review + General checklist Locked.",
-  "scope": "11 mục Room 2 Locked + 3 conflict factors quan trọng + 29 mục General checklist"
+  "footer": "v1.3 · Public readers-only export · Room 2 Locked + Important Draft review + General checklist Locked.",
+  "scope": "11 mục Room 2 Locked + 4 conflict factors quan trọng + 29 mục General checklist"
 };
